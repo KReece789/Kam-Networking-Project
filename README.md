@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This project demonstrates how to design and build a production-style AWS network from scratch and deploy a working web server on top of it. I built a custom VPC with public and private subnets across two Availability Zones, configured routing through an Internet Gateway and a NAT Gateway, locked down access with a Security Group, and launched an EC2 instance that serves a web application over HTTP.
+This project demonstrates how to design and build a production-style AWS network from scratch and deploy a working web server on top of it. A custom VPC was built with public and private subnets across two Availability Zones, routing was configured through an Internet Gateway and a NAT Gateway, access was locked down with a Security Group, and an EC2 instance was launched to serve a web application over HTTP.
 
-The main goal of this project was to gain hands-on experience with core AWS networking concepts (VPC, subnets, route tables, IGW, NAT) and understand how they work together to support a secure, highly-available application architecture.
+The main goal of this project was to demonstrate hands-on experience with core AWS networking concepts (VPC, subnets, route tables, IGW, NAT) and how they work together to support a secure, highly-available application architecture.
 
 ## Architecture
 
@@ -57,24 +57,24 @@ Private Route Table ──── Private Subnet 1 (10.0.1.0/24)
 ## Implementation
 
 ### Step 1 – VPC and Subnet Setup
-Created **Lab VPC** (`10.0.0.0/16`) using the VPC wizard, which generated the initial public/private subnet pair, route tables, IGW, and NAT Gateway. Then extended the design to a second Availability Zone by adding:
+**Lab VPC** (`10.0.0.0/16`) was created using the VPC wizard, which generated the initial public/private subnet pair, route tables, IGW, and NAT Gateway. The design was then extended to a second Availability Zone by adding:
 - **Public Subnet 2** — `10.0.2.0/24`
 - **Private Subnet 2** — `10.0.3.0/24`
 
 This multi-AZ layout reflects a high-availability design pattern, even though this lab only deploys a single EC2 instance.
 
 ### Step 2 – Routing Configuration
-- Associated **Public Subnet 2** with the **Public Route Table** (route to the Internet Gateway).
-- Associated **Private Subnet 2** with the **Private Route Table** (route out through the NAT Gateway).
+- **Public Subnet 2** was associated with the **Public Route Table** (route to the Internet Gateway).
+- **Private Subnet 2** was associated with the **Private Route Table** (route out through the NAT Gateway).
 - Result: public subnets have a direct path to the internet, while private subnets can only reach the internet outbound through NAT — they remain unreachable from the outside.
 
 ### Step 3 – Security Group Configuration
-Created a **Web Security Group** with:
+A **Web Security Group** was created with:
 - Inbound rule: **HTTP (port 80)** from **Anywhere-IPv4 (0.0.0.0/0)**
 - Everything else blocked by default (Security Groups are implicit deny)
 
 ### Step 4 – EC2 Deployment
-Launched an **Amazon Linux 2**, **t3.micro** instance named **Web Server 1** into **Public Subnet 2** with a public IP enabled and the **Web Security Group** attached. The instance was bootstrapped with the following user data script:
+An **Amazon Linux 2**, **t3.micro** instance named **Web Server 1** was launched into **Public Subnet 2** with a public IP enabled and the **Web Security Group** attached. The instance was bootstrapped with the following user data script:
 
 ```bash
 #!/bin/bash
@@ -94,7 +94,7 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 
 ## Screenshots
 
-*(Add your own screenshots here, with a short description under each.)*
+*(Screenshots to be added, each with a short caption.)*
 
 - VPC and subnet layout in the AWS console
 - Route table associations
@@ -104,7 +104,7 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 
 ## Challenges and Troubleshooting
 
-- The website refused to launch and after about an hour of debugging and testing, it turned out the issue was with a browser extension and not the project itself.
+*(To be completed with any issues encountered during the build — for example, subnet/route table mismatches, security group misconfiguration, or the instance not reaching "running" status — including what went wrong, how it was diagnosed, how it was resolved, and what it revealed.)*
 
 ## Security Considerations
 
@@ -113,9 +113,9 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 - **NAT Gateway:** Lets private subnet resources initiate outbound connections without exposing them to inbound internet traffic.
 - **Least privilege routing:** Private subnets have no direct route to the Internet Gateway, so they can't be reached directly from the internet.
 
-## What I Learned
+## Key Takeaways
 
-Through this project, I developed practical experience with:
+This project provided practical experience with:
 
 - Designing a VPC and planning IPv4 subnet CIDR ranges
 - Separating public and private subnets and understanding when to use each
@@ -135,3 +135,6 @@ The project was successfully completed and tested. The final environment consist
 - Add a second NAT Gateway (one per AZ) to remove the single point of failure
 - Add CloudWatch monitoring and alarms for the EC2 instance
 - Move to HTTPS with a TLS certificate instead of plain HTTP
+
+---
+*Note: Do not include AWS account IDs, temporary credentials, passwords, access keys, or lab-specific resource ARNs in this README.*
