@@ -104,7 +104,7 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 
 ## Challenges and Troubleshooting
 
-*(Fill in with anything you personally ran into — for example, subnet/route table mismatches, security group misconfiguration, or the instance not reaching "running" status. Describe what went wrong, how you diagnosed it, how you fixed it, and what you learned.)*
+- The website refused to launch and after about an hour of debugging and testing, it turned out the issue was with a browser extension and not the project itself.
 
 ## Security Considerations
 
@@ -135,6 +135,3 @@ The project was successfully completed and tested. The final environment consist
 - Add a second NAT Gateway (one per AZ) to remove the single point of failure
 - Add CloudWatch monitoring and alarms for the EC2 instance
 - Move to HTTPS with a TLS certificate instead of plain HTTP
-
----
-*Note: Do not include AWS account IDs, temporary credentials, passwords, access keys, or lab-specific resource ARNs in this README.*
