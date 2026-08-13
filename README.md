@@ -92,7 +92,7 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 - Opened the instance's **Public IPv4 DNS** in a browser.
 - Confirmed the web application loaded successfully over HTTP.
 
-## Screenshots
+## Screenshots - TO DO!!!!!!!!!!!!!!!!!!!!!!!!!
 
 *(Screenshots to be added, each with a short caption.)*
 
