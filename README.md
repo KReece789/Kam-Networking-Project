@@ -119,6 +119,8 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 
 - EC2 instance details
 
+<img width="1164" height="433" alt="site" src="https://github.com/user-attachments/assets/8db5d57d-04fe-4517-a90b-cfeb32b4de89" />
+
 - Web application loading successfully in the browser
 
 ## Challenges and Troubleshooting
