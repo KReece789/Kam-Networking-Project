@@ -96,21 +96,27 @@ This installs Apache, PHP, and MySQL client tools, pulls down a sample applicati
 
 <img width="1458" height="110" alt="vpc" src="https://github.com/user-attachments/assets/be7d4577-df90-4c79-86e6-e111c5a4a26b" />
 <img width="1452" height="364" alt="subnet" src="https://github.com/user-attachments/assets/6ba53dd3-104b-4e0f-b970-e9cb5bf42826" />
+
 - VPC and subnet layout in the AWS console
 
 <img width="1460" height="219" alt="route tables" src="https://github.com/user-attachments/assets/218d681c-77fa-42df-9a3e-963586b4f18f" />
+
 - Route table associations
 
 <img width="806" height="103" alt="security-group-inbound-rules" src="https://github.com/user-attachments/assets/27fe9491-c3a4-4e43-859d-6bb54e893916" />
+
 - Security Group inbound rules
 
 <img width="785" height="77" alt="security-group-outbound-rules" src="https://github.com/user-attachments/assets/850c92cd-2ed6-47e9-a1d9-c4008f1b5167" />
+
 - Security Group outbound rules
 
 <img width="797" height="237" alt="instance-details-panel" src="https://github.com/user-attachments/assets/1b1bb120-c1a1-4b80-9c8f-32966c6a559d" />
+
 - EC2 instance showing 2/2 status checks passed
 
 <img width="797" height="237" alt="instance-details-panel" src="https://github.com/user-attachments/assets/c8fb1bb8-f56c-41ed-88fc-a93b43c90360" />
+
 - EC2 instance details
 
 - Web application loading successfully in the browser
